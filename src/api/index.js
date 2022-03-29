@@ -16,7 +16,7 @@ export async function CallApi(f) {
 export async function CallPost(url, payload, headers) {
   const response = await CallApi(() =>
     axios.post(`${process.env.REACT_APP_HOST}${url}`, payload, {
-      headers: { ...headers, "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token" },
+      headers: { ...headers, "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS"},
       withCredentials: true,
     })
   )
@@ -26,7 +26,7 @@ export async function CallPost(url, payload, headers) {
 export async function CallPut(url, payload, headers) {
   const response = await CallApi(() =>
     axios.put(`${process.env.REACT_APP_HOST}${url}`, payload, {
-      headers: { ...headers, "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token" },
+      headers: { ...headers, "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS" },
       withCredentials: true,
     })
   )
