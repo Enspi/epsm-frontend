@@ -1,7 +1,12 @@
 import axios from "axios"
 export async function CallApi(f) {
   try {
-    
+    let headers = new Headers();
+
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
+    headers.append('Origin','http://localhost:3000');
     const response = await f()
     return response.data
   } catch (e) {
