@@ -1,6 +1,7 @@
 import axios from "axios"
 export async function CallApi(f) {
   try {
+    
     const response = await f()
     return response.data
   } catch (e) {
@@ -37,7 +38,7 @@ export async function CallPut(url, payload, headers) {
 export async function CallGet(url, headers) {
   const response = await CallApi(() =>
     axios.get(`${process.env.REACT_APP_HOST}${url}`, {
-      headers: { ...headers },
+      headers: { ...headers, "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token", "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS" },
       withCredentials: true,
     })
   )
