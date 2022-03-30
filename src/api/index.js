@@ -1,7 +1,7 @@
 import axios from "axios"
 export async function CallApi(f) {
   try {
-   
+    console.log('Ok')
     const response = await f()
     return response.data
   } catch (e) {
