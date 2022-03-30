@@ -5,8 +5,7 @@ export async function CallApi(f) {
 
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
-    headers.append('Origin','http://localhost:3000');
+    headers.append('Origin','https://master.d3uboawzuu8f07.amplifyapp.com');
     const response = await f()
     return response.data
   } catch (e) {
