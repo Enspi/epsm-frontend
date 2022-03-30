@@ -1,13 +1,7 @@
 import axios from "axios"
 export async function CallApi(f) {
   try {
-    let headers = new Headers();
-    
-    headers.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
-    headers.append('Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
+   
     const response = await f()
     return response.data
   } catch (e) {
