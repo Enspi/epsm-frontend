@@ -8,7 +8,6 @@ export async function CallApi(f) {
     headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Origin','https://master.d3uboawzuu8f07.amplifyapp.com');
     const response = await f()
     return response.data
   } catch (e) {
